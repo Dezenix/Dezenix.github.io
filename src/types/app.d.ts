@@ -1,1 +1,1 @@
-type CustomType = string
+type Theme = import('styled-components').DefaultTheme

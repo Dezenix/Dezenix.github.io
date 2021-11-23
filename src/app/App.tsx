@@ -1,12 +1,20 @@
 import '@/app/plugins/bootstrap'
 import RouterRoutes from '@/app/router'
+import DefaultTheme from '@/app/themes/default'
 import React from 'react'
-import '../styles/app.css'
+import styled, { ThemeProvider } from 'styled-components'
 
 export default function App() {
     return (
-        <div>
-            <RouterRoutes />
-        </div>
+        <ThemeProvider theme={DefaultTheme}>
+            <AppContainer>
+                <RouterRoutes />
+            </AppContainer>
+        </ThemeProvider>
     )
 }
+
+const AppContainer = styled.div`
+    background: ${(props) => props.theme.primary};
+    color: ${(props) => props.theme.textPrimary};
+`

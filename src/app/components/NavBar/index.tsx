@@ -24,5 +24,5 @@ export default function Navbar() {
 
 const NavbarContainer = styled(Container)`
     height: 70px;
-    background: #eeeeee;
+    background: ${(props) => props.theme.secondary};
 `
