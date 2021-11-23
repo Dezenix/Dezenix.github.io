@@ -77,7 +77,5 @@
     "extends": [
       "./.eslintrc.js"
     ]
-  },
-  "repository": "https://github.com/CKGrafico/Frontend-Boilerplates#frontend-boilerplates",
-  "author": "https://github.com/CKGrafico/Frontend-Boilerplates#-contributors"
+  }
 }
