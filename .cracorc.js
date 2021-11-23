@@ -6,76 +6,56 @@ const PurgecssPlugin = require('purgecss-webpack-plugin')
 const CSS_MODULE_LOCAL_IDENT_NAME = '[local]___[hash:base64:5]'
 
 module.exports = {
-  plugins: [
-    {
-      plugin: stylesResourcesLoader,
-      options: {
-        patterns: ['./src/styles/variables.css'],
-        injector: (source, resources) => {
-          const combineAll = (type) =>
-            resources
-              .filter(({ file }) => file.includes(type))
-              .map(({ content }) => content)
-              .join('')
-
-          return (source.includes('/*** Not Inject ***/') ? '' : combineAll('variables')) + source
-        },
-      },
-    },
-  ],
-  webpack: {
-    alias: {
-      '~': `${path.resolve(__dirname)}/src`,
-    },
-    configure: (webpackConfig) => {
-      webpackConfig.optimization.minimizer = [
-        new TerserPlugin({
-          terserOptions: {
-            keep_classnames: true,
-            keep_fnames: true,
-          },
-        }),
-      ]
-
-      return webpackConfig
-    },
     plugins: [
-      new PurgecssPlugin({
-        paths: () => glob.sync('./src/**/*.tsx', { nodir: true }),
-      }),
-    ],
-  },
-  jest: {
-    configure: {
-      moduleNameMapper: {
-        '^~(.*)$': '<rootDir>/src$1',
-      },
-      moduleFileExtensions: ['js', 'jsx', 'json', 'ts', 'tsx'],
-      transform: {
-        '.+\\.(css|svg|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
-        '^.+\\.tsx?$': 'ts-jest',
-      },
-      transformIgnorePatterns: ['/node_modules/'],
-      testMatch: ['**/**/*.test.(js|jsx|ts|tsx)|**/tests/unit/specs/*.(js|jsx|ts|tsx)'],
-      testURL: 'http://localhost/',
-      globals: {
-        'ts-jest': {
-          babelConfig: true,
+        {
+            plugin: stylesResourcesLoader,
+            options: {
+                patterns: ['./src/styles/variables.css'],
+                injector: (source, resources) => {
+                    const combineAll = (type) =>
+                        resources
+                            .filter(({ file }) => file.includes(type))
+                            .map(({ content }) => content)
+                            .join('')
+
+                    return (source.includes('/*** Not Inject ***/') ? '' : combineAll('variables')) + source
+                },
+            },
         },
-      },
-      setupFiles: ['./tests/unit/jest.setup.js'],
+    ],
+    webpack: {
+        alias: {
+            '~': `${path.resolve(__dirname)}/src`,
+            '@': `${path.resolve(__dirname)}/src`,
+        },
+        configure: (webpackConfig) => {
+            webpackConfig.optimization.minimizer = [
+                new TerserPlugin({
+                    terserOptions: {
+                        keep_classnames: true,
+                        keep_fnames: true,
+                    },
+                }),
+            ]
+
+            return webpackConfig
+        },
+        plugins: [
+            new PurgecssPlugin({
+                paths: () => glob.sync('./src/**/*.tsx', { nodir: true }),
+            }),
+        ],
     },
-  },
-  style: {
-    modules: {
-      camelCase: true,
-      localIdentName: CSS_MODULE_LOCAL_IDENT_NAME,
+    style: {
+        modules: {
+            camelCase: true,
+            localIdentName: CSS_MODULE_LOCAL_IDENT_NAME,
+        },
     },
-  },
-  babel: {
-    loaderOptions: {
-      cacheDirectory: false,
+    babel: {
+        loaderOptions: {
+            cacheDirectory: false,
+        },
+        plugins: [],
     },
-    plugins: [],
-  },
 }

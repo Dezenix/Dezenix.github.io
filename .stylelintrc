@@ -1,18 +1,21 @@
 {
   "extends": "stylelint-prettier/recommended",
-  "ignoreFiles": ["**/*.html", "**/*.js", "**/*.ts"],
+  "ignoreFiles": [
+    "**/*.html",
+    "**/*.js",
+    "**/*.ts"
+  ],
   "plugins": [
-    "stylelint-prettier",
+    "stylelint-prettier"
   ],
   "rules": {
-    "prettier/prettier": true,
     "at-rule-no-unknown": null,
     "font-family-no-missing-generic-family-keyword": null,
     "no-missing-end-of-source-newline": null,
     "no-empty-source": null,
     "shorthand-property-no-redundant-values": null,
     "block-no-empty": null,
-    "indentation": 2,
+    "indentation": 4,
     "string-quotes": "single",
     "no-duplicate-selectors": true,
     "color-hex-length": "long",
@@ -35,6 +38,6 @@
     "media-feature-name-no-vendor-prefix": true,
     "media-feature-colon-space-before": "never",
     "media-feature-colon-space-after": "always",
-    "max-empty-lines": null,
+    "max-empty-lines": null
   }
 }

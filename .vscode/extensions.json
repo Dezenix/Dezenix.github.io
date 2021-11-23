@@ -1,10 +1,10 @@
 {
   "recommendations": [
     "editorconfig.editorconfig",
-    "stylelint.vscode-stylelint",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "christian-kohler.path-intellisense",
-    "mikerhyssmith.ts-barrelr"
+    "mikerhyssmith.ts-barrelr",
+    "ecmel.vscode-html-css"
   ]
 }
