@@ -1,4 +1,3 @@
-import '@/app/plugins/bootstrap'
 import RouterRoutes from '@/app/router'
 import DefaultTheme from '@/app/themes/default'
 import React from 'react'
