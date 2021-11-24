@@ -1,11 +1,13 @@
 {
   "recommendations": [
-    "editorconfig.editorconfig",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "christian-kohler.path-intellisense",
     "mikerhyssmith.ts-barrelr",
     "ecmel.vscode-html-css",
-    "formulahendry.auto-complete-tag"
+    "formulahendry.auto-complete-tag",
+    "loiane.ts-extension-pack",
+    "salbert.comment-ts",
+    "xqchen.yarn-ui"
   ]
 }
