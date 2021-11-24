@@ -4,7 +4,7 @@
   "license": "MIT",
   "version": "3.1.0",
   "scripts": {
-    "start": "craco start",
+    "start": "BROWSER=none craco start",
     "build": "craco build",
     "test": "craco test",
     "lint": "yarn lint:scripts && yarn lint:styles && yarn lint:editor",
