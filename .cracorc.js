@@ -26,7 +26,11 @@ module.exports = {
             new PurgecssPlugin({
                 paths: () => glob.sync('./src/**/*.tsx', { nodir: true }),
             }),
-            new BundleAnalyzerPlugin(),
+            new BundleAnalyzerPlugin({
+                analyzerMode: 'disabled',
+                generateStatsFile: true,
+                statsOptions: { source: false },
+            }),
         ],
     },
     babel: {

@@ -11,7 +11,8 @@
     "lint:scripts": "eslint --fix . --ext .ts,.tsx src",
     "lint:styles": "stylelint \"./src/**/*.(css)\" --fix",
     "lint:editor": "eclint fix",
-    "update": "cra-update"
+    "update": "cra-update",
+    "bundle-report": "webpack-bundle-analyzer --port 4200 dist/stats.json"
   },
   "husky": {
     "hooks": {
