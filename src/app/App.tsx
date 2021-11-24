@@ -14,6 +14,6 @@ export default function App() {
 }
 
 const AppContainer = styled.div`
-    background: ${(props) => props.theme.primary};
-    color: ${(props) => props.theme.textPrimary};
+    background: ${(props) => props.theme.palette.primary.main};
+    color: ${(props) => props.theme.palette.text.primary};
 `

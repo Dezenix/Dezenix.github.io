@@ -1,9 +1,18 @@
-const defaultTheme: Theme = {
-    primary: '#ffffff',
-    secondary: '#eeeeee',
-    textPrimary: '#000000',
-    textSecondary: '#fafafa',
-    textInverse: '#ffffff',
-}
+import { createTheme } from '@mui/material/styles'
+
+const defaultTheme = createTheme({
+    palette: {
+        primary: {
+            main: '#b5ddd1',
+        },
+        secondary: {
+            main: '#b2d9ea',
+        },
+        text: {
+            primary: '#000000',
+            secondary: '#fafafa',
+        },
+    },
+})
 
 export default defaultTheme

@@ -1,11 +1,6 @@
+import { Theme } from '@mui/material/styles'
 import 'styled-components'
 
 declare module 'styled-components' {
-    export interface DefaultTheme {
-        primary: string
-        secondary: string
-        textPrimary: string
-        textSecondary: string
-        textInverse: string
-    }
+    export interface DefaultTheme extends Theme {}
 }
