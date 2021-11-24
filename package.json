@@ -32,7 +32,8 @@
     "react-i18next": "^11.14.3",
     "react-router-dom": "^6.0.2",
     "reflect-metadata": "^0.1.13",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.3",
+    "webpack-bundle-analyzer": "^4.5.0"
   },
   "devDependencies": {
     "@craco/craco": "^6.4.1",

@@ -2,7 +2,7 @@ const path = require('path')
 const glob = require('glob')
 const TerserPlugin = require('terser-webpack-plugin')
 const PurgecssPlugin = require('purgecss-webpack-plugin')
-const CSS_MODULE_LOCAL_IDENT_NAME = '[local]___[hash:base64:5]'
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
     webpack: {
@@ -26,6 +26,7 @@ module.exports = {
             new PurgecssPlugin({
                 paths: () => glob.sync('./src/**/*.tsx', { nodir: true }),
             }),
+            new BundleAnalyzerPlugin(),
         ],
     },
     babel: {
