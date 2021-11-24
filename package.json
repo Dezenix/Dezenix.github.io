@@ -12,7 +12,8 @@
     "lint:styles": "stylelint \"./src/**/*.(css)\" --fix",
     "lint:editor": "eclint fix",
     "update": "cra-update",
-    "bundle-report": "webpack-bundle-analyzer --port 4200 dist/stats.json"
+    "bundle-report": "webpack-bundle-analyzer --port 4200 dist/stats.json",
+    "preinstall": "node tools/preinstall-script.js"
   },
   "husky": {
     "hooks": {
